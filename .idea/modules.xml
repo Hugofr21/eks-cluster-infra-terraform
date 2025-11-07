@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/eks-cluster-infra-terraform.iml" filepath="$PROJECT_DIR$/.idea/eks-cluster-infra-terraform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hosts.iml" filepath="$PROJECT_DIR$/hosts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/network.iml" filepath="$PROJECT_DIR$/network.iml" />
+    </modules>
+  </component>
+</project>
