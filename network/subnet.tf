@@ -16,22 +16,22 @@ resource "aws_subnet" "private_zone2" {
   availability_zone =  module.local.zone2
 
   tags = {
-    "Name"                                                 = "${module.local.env}-private-${local.zone2}"
+    "Name"                                                 = "${module.local.env}-private-${module.local.zone2}"
     "kubernetes.io/role/internal-elb"                      = "1"
-    "kubernetes.io/cluster/${ module.local.env}-${local.eks_name}" = "owned"
+    "kubernetes.io/cluster/${ module.local.env}-${module.local.eks_name}" = "owned"
   }
 }
 
 resource "aws_subnet" "public_zone1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.64.0/19"
-  availability_zone       = local.zone1
+  availability_zone       = module.local.zone1
   map_public_ip_on_launch = true
 
   tags = {
     "Name"                                                 = "${module.local.env}-public-${module.local.zone1}"
     "kubernetes.io/role/elb"                               = "1"
-    "kubernetes.io/cluster/${local.env}-${local.eks_name}" = "owned"
+    "kubernetes.io/cluster/${module.local.env}-${module.local.eks_name}" = "owned"
   }
 }
 

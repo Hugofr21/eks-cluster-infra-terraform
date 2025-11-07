@@ -6,6 +6,4 @@ resource "aws_vpc" "main" {
   tags = {
     name = "${module.local.env}-main"
   }
-
-
 }
