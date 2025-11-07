@@ -1,8 +1,14 @@
-module "cluster" {
-  source = "./"
+module "centosMON_MGR" {
+  source = "./modules/centosMON_MGR"
+
+  subnetwork_public   = module.networking
+  subnetwork_private = module.networking
+
+  depends_on = [module.networking]
 }
 
 
-module "network" {
+
+module "networking" {
   source = "./network"
 }

@@ -4,12 +4,8 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    name = "${local.env}-main"
+    name = "${module.local.env}-main"
   }
 
 
-}
-
-resource "aws_vpc" "publicSubnet" {
-  cidr_block = "10.0.0.0/16"
 }
