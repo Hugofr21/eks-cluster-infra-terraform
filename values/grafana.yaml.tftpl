@@ -1,0 +1,16 @@
+---
+apiVersion: 1
+
+adminUser: ${admin_user}
+adminPassword: ${admin_password}
+
+deploymentStrategy:
+  type: Recreate
+
+ingress:
+  enabled: true
+  ingressClassName: internal-nginx
+  path: /
+  pathType: Prefix
+  hosts:
+    - ${grafana_host}

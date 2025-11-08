@@ -21,3 +21,47 @@ variable "nginx_chart_values_file" {
   type        = string
   default     = "values.yaml"
 }
+
+
+variable "grafana_namespace" {
+  description = "Namespace for Grafana"
+  type        = string
+  default     = "monitoring"
+}
+
+variable "grafana_chart_version" {
+  description = "Grafana chart version"
+  type        = string
+  default     = "10.1.1"
+}
+
+variable "grafana_chart_repository" {
+  description = "Repository for Grafana chart"
+  type        = string
+  default     = "https://grafana.github.io/helm-charts"
+}
+
+variable "grafana_chart_name" {
+  description = "Chart name for Grafana"
+  type        = string
+  default     = "grafana"
+}
+
+
+
+variable "grafana_admin_user" {
+  description = "The username for Grafana admin"
+  default = "admin"
+  type = string
+}
+
+variable "grafana_admin_password" {
+  description = "The password for the Grafana admin."
+  sensitive = true
+  type = string
+}
+
+variable "grafana_hostname" {
+  description = "The hostname for Ingress (e.g., grafana.domain.com)"
+  type = string
+}

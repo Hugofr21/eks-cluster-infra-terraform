@@ -27,3 +27,23 @@ resource "helm_release" "cert_manager" {
 
   depends_on = [helm_release.nginx_ingress]
 }
+
+resource "helm_release" "grafana" {
+  name = var.grafana_chart_name
+
+  repository       = var.grafana_chart_repository
+  chart            = var.grafana_chart_name
+  namespace        = var.nginx_namespace
+  version          = var.eks_version
+  create_namespace = true
+
+  values = [
+    templatefile("${path.module}/../values/grafana.yaml.tftpl", {
+      admin_user     = var.grafana_admin_user
+      admin_password = var.grafana_admin_password
+      grafana_host   = var.grafana_hostname
+    })
+  ]
+
+  depends_on = [helm_release.nginx_ingress]
+}
