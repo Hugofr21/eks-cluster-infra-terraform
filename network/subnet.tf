@@ -1,7 +1,7 @@
 resource "aws_subnet" "private_zone1" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.0.0/19"
-  availability_zone = module.local.zone
+  availability_zone = module.local.zone1
 
   tags = {
     "Name"                                                 = "${ module.local.env}-private-${ module.local.zone1}"

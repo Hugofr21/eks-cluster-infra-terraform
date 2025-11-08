@@ -1,6 +1,4 @@
 resource "aws_eip" "nat" {
-  vpc = true
-
   tags = {
     Name = "${module.local.env}-nat"
   }

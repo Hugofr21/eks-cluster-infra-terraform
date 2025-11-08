@@ -1,0 +1,22 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+crash.log
+
+
+.terraform/
+
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+terraform.tfvars
+terraform.tfvars.json
+*.tfplan
+
+*.pem
+*.key
+
+.terraform.lock.hcl'

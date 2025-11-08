@@ -1,7 +1,7 @@
 locals {
-  env = ""
-  region = "us-west-2"
-  zone1 = ""
-  zone2  = ""
-  eks_name = "test1"
+  env       = "prod" # enum: dev , staging
+  region    = "us-west-2"
+  zone1     = "us-west-2a"
+  zone2     = "us-west-2b"
+  eks_name  = "cluster EKS"
 }
