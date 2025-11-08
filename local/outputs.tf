@@ -17,3 +17,12 @@ output "zone2" {
 output "eks_name" {
   value = local.eks_name
 }
+
+
+output "cluster_name" {
+  value = local.cluster_name
+}
+
+output "cluster_role_name" {
+  value = local.cluster_role_name
+}
